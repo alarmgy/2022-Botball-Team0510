@@ -5,6 +5,7 @@
 #define left 500
 #define right 493
 
+// Alternate code - doesn't work well
 int other(){ 
     enable_servos();
     set_servo_position(0, 400);
@@ -32,7 +33,8 @@ int other(){
 }
 
 int main(){
-    //wait_for_light(0);
+    wait_for_light(0);
+    shut_down_in(120);
     
     enable_servos();
     set_servo_position(0, 400);
@@ -63,11 +65,9 @@ int main(){
     mav(1,-right);
     msleep(3000);
     set_servo_position(0, 0);
-    // while (analog(0)<TOP_HAT_THRESHOLD){
     mav(0,-left);
     mav(1,-right);
     msleep(30000);
-    // }
     mav(0, left);
     mav(1, 0);
     msleep(5000);
