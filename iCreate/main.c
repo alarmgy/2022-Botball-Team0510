@@ -1,6 +1,9 @@
 #include <kipr/wombat.h>
 
 int main() {
+    wait_for_light(0);
+    shut_down_in(120);
+    
     create_connect();
     create_start();
     enable_servo(3);
